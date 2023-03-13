@@ -1,0 +1,23 @@
+services:
+  web:
+    build:
+      dockerfile: ./nginx/Dockerfile
+    depends_on:
+      - phpfpm
+    networks:
+      - app-tier
+    ports:
+     - "80:80"
+    volumes:
+      - ./nginx/conf.d/my_server_block.conf:/opt/bitnami/nginx/conf/server_blocks/my_server_block.conf:ro
+  phpfpm:
+    build:
+      dockerfile: ./php/Dockerfile
+    networks:
+      - app-tier
+    volumes:
+      - ./app:/app
+
+networks:
+    app-tier:
+      driver: bridge
