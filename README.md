@@ -39,4 +39,4 @@ VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=DEVSENS
 
 ## Contributing:
 
-Any pull request are welcome. If you would like to contribute to this project 
+Any pull request are welcome.
